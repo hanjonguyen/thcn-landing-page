@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bản Đồ Xây Kênh Thương Hiệu Cá Nhân - Diễm Thúy Coach</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Outfit:wght@400;700;900&amp;display=swap" rel="stylesheet">
+
+    <!-- GOOGLE MATERIAL SYMBOLS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- TAILWIND CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#dc2626',
+                            yellow: '#facc15',
+                            darkest: '#000000',
+                            darker: '#09090b',
+                            card: '#18181b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-glow': 'radial-gradient(circle at 50% 50%, rgba(220, 38, 38, 0.15) 0%, transparent 50%)',
+                        'hero-grid': 'linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48;
+        }
+
+        img {
+            height: auto !important;
+            max-width: 100%;
+        }
+
+        .cta-button-animate {
+            animation: pulse-gold 2s infinite;
+        }
+
+        @keyframes pulse-gold {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(250, 204, 21, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
+        }
+
+        .bg-hero-grid {
+            background-size: 40px 40px;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #dc2626; border-radius: 10px; }
+
+        .module-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .module-content.active {
+            max-height: 1000px;
+        }
+    </style>
+</head>
+<body class="bg-black font-sans">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-brand-red text-white py-2 md:py-3 px-4 shadow-2xl border-b border-red-800">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row lg:justify-between items-center gap-3 w-full">
+            <div class="font-black text-lg md:text-2xl lg:text-4xl tracking-tight leading-tight text-center lg:text-left drop-shadow-md">
+                <span class="text-white">Vé mua sớm </span>
+                <span class="text-black line-through">10.868.000đ</span>
+                <span class="text-white"> chỉ còn </span>
+                <span class="text-brand-yellow">986.000đ</span>
+            </div>
+            <div class="flex flex-row items-center justify-center w-full lg:w-auto gap-4 md:gap-8">
+                <a href="#register-now" class="flex flex-col items-center hover:scale-105 transition-transform duration-300">
+                    <span class="text-gray-300 text-[10px] md:text-xs mb-1 leading-none">Ưu đãi kết thúc sau:</span>
+                    <div class="flex gap-1 md:gap-2">
+                        <div class="bg-brand-red rounded md:rounded-md flex flex-col items-center justify-center w-8 h-8 md:w-12 md:h-12 shadow-inner border border-red-500/30">
+                            <span id="days" class="text-white font-black text-xs md:text-xl leading-none">00</span>
+                            <span class="text-white text-[6px] md:text-[10px] leading-none uppercase">Ngày</span>
+                        </div>
+                        <div class="bg-brand-red rounded md:rounded-md flex flex-col items-center justify-center w-8 h-8 md:w-12 md:h-12 shadow-inner border border-red-500/30">
+                            <span id="hours" class="text-white font-black text-xs md:text-xl leading-none">00</span>
+                            <span class="text-white text-[6px] md:text-[10px] leading-none uppercase">Giờ</span>
+                        </div>
+                        <div class="bg-brand-red rounded md:rounded-md flex flex-col items-center justify-center w-8 h-8 md:w-12 md:h-12 shadow-inner border border-red-500/30">
+                            <span id="minutes" class="text-white font-black text-xs md:text-xl leading-none">00</span>
+                            <span class="text-white text-[6px] md:text-[10px] leading-none uppercase">Phút</span>
+                        </div>
+                        <div class="bg-brand-red rounded md:rounded-md flex flex-col items-center justify-center w-8 h-8 md:w-12 md:h-12 shadow-inner border border-red-500/30">
+                            <span id="seconds" class="text-white font-black text-xs md:text-xl leading-none">00</span>
+                            <span class="text-white text-[6px] md:text-[10px] leading-none uppercase">Giây</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#register-now" class="cta-button-animate bg-brand-yellow text-black font-black px-4 py-2 md:px-8 md:py-3 rounded-lg md:rounded-xl text-sm md:text-xl whitespace-nowrap inline-block hover:bg-brand-red hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(220,38,38,0.4)]">
+                    GIỮ CHỖ NGAY
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 lg:pt-20">
+        <!-- HERO SECTION -->
+        <section class="relative min-h-screen flex items-center justify-center text-center px-4 py-20 overflow-hidden border-b-[12px] border-brand-red bg-black">
+            <div class="absolute inset-0 bg-hero-glow pointer-events-none"></div>
+            <div class="absolute inset-0 bg-hero-grid pointer-events-none"></div>
+
+            <div class="absolute top-1/4 -left-20 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-red-600/30 rounded-full blur-[100px] md:blur-[120px] pointer-events-none"></div>
+            <div class="absolute bottom-1/4 -right-20 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-red-700/30 rounded-full blur-[120px] md:blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto z-10 flex flex-col items-center relative w-full">
+                <h1 class="text-2xl md:text-3xl lg:text-5xl font-black leading-[1.3] mb-8 tracking-tighter uppercase text-white text-center w-full max-w-[1400px] whitespace-normal px-2 font-display">
+                    <span class="block">Làm thế nào để xây kênh thương hiệu cá nhân</span>
+                    <span class="block">trên Facebook có khách hàng trong 30 ngày</span>
+                    <span class="block">ngay cả khi bạn không biết chạy quảng cáo</span>
+                    <span class="block">và mới bắt đầu xây kênh</span>
+                </h1>
+
+                <div class="flex flex-col items-center w-full max-w-7xl">
+                    <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 w-full mb-12">
+                        <div class="lg:w-3/5 text-left px-4 md:px-0">
+                            <p class="text-lg md:text-3xl text-brand-yellow mb-8 font-bold leading-[1.5] max-w-[800px]">
+                                <span class="block">Khóa học Bản Đồ Xây Kênh Thương Hiệu</span>
+                                <span class="block">Cá Nhân dành cho những chủ shop</span>
+                                <span class="block">xây dựng Fanpage để tạo ra uy tín</span>
+                                <span class="block">và tiếp cận khách hàng tự động mỗi ngày</span>
+                            </p>
+                            <p class="text-sm md:text-xl text-white font-black uppercase tracking-widest opacity-80 leading-loose">
+                                Hình thức học Online qua Zoom
+                            </p>
+                        </div>
+                        <div class="lg:w-2/5 flex justify-center relative">
+                            <div class="absolute inset-0 bg-brand-yellow/20 rounded-full blur-[120px] pointer-events-none"></div>
+                            <img src="https://lh3.googleusercontent.com/d/1jy3XHLugsIO6v92V1we9O_XMUVQFnLzy" alt="Coach Diễm Thúy" class="relative w-full max-w-[280px] md:max-w-md object-contain drop-shadow-[0_0_60px_rgba(250,204,21,0.5)] z-10 scale-[1.2] md:scale-[1.32]" style="height: auto !important;">
+                        </div>
+                    </div>
+
+                    <div class="w-full flex justify-center px-4">
+                        <a href="#register-now" class="cta-button-animate bg-brand-yellow text-black font-black px-8 py-5 md:px-16 md:py-8 rounded-full text-xl md:text-4xl uppercase inline-block shadow-[0_0_50px_rgba(250,204,21,0.6)] hover:bg-brand-red hover:text-white transition-all duration-300 transform hover:scale-105 w-full md:w-auto text-center">
+                            ĐĂNG KÝ NGAY
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROBLEMS SECTION -->
+        <section class="py-16 md:py-20 bg-white px-4 relative overflow-hidden border-y border-gray-200">
+            <div class="max-w-4xl mx-auto relative z-10 text-center">
+                <h2 class="text-2xl md:text-5xl font-black text-black mb-10 md:mb-12 uppercase tracking-tight leading-[1.3] md:leading-[1.4]">
+                    <span class="block">Nếu bạn đang kinh doanh, có thể bạn đang gặp một</span>
+                    <span class="block">hoặc nhiều vấn đề sau:</span>
+                </h2>
+
+                <div class="max-w-3xl mx-auto p-5 md:p-10 border-4 border-gray-100 rounded-[2rem] md:rounded-[2.5rem] space-y-4 md:space-y-6 shadow-sm">
+                    <div class="flex items-center gap-3 md:gap-4 bg-gray-50 p-4 md:p-5 rounded-xl md:rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left">
+                        <div class="bg-red-100 text-red-600 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined font-bold text-sm md:text-base">cancel</span>
+                        </div>
+                        <span class="text-gray-800 font-bold text-lg md:text-3xl leading-relaxed">Bài viết nội dung ít tương tác, gần như không ai quan tâm.</span>
+                    </div>
+                    <div class="flex items-center gap-3 md:gap-4 bg-gray-50 p-4 md:p-5 rounded-xl md:rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left">
+                        <div class="bg-red-100 text-red-600 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined font-bold text-sm md:text-base">cancel</span>
+                        </div>
+                        <span class="text-gray-800 font-bold text-lg md:text-3xl leading-relaxed">Không biết cách biến người xem thành khách hàng trả tiền.</span>
+                    </div>
+                    <div class="flex items-center gap-3 md:gap-4 bg-gray-50 p-4 md:p-5 rounded-xl md:rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left">
+                        <div class="bg-red-100 text-red-600 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined font-bold text-sm md:text-base">cancel</span>
+                        </div>
+                        <span class="text-gray-800 font-bold text-lg md:text-3xl leading-relaxed">Không biết khám Fanpage của mình có bị gậy ẩn hay không</span>
+                    </div>
+                    <div class="flex items-center gap-3 md:gap-4 bg-gray-50 p-4 md:p-5 rounded-xl md:rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left">
+                        <div class="bg-red-100 text-red-600 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined font-bold text-sm md:text-base">cancel</span>
+                        </div>
+                        <span class="text-gray-800 font-bold text-lg md:text-3xl leading-relaxed">Khách hỏi rất nhiều nhưng không mua.</span>
+                    </div>
+                    <div class="flex items-center gap-3 md:gap-4 bg-gray-50 p-4 md:p-5 rounded-xl md:rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left">
+                        <div class="bg-red-100 text-red-600 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined font-bold text-sm md:text-base">cancel</span>
+                        </div>
+                        <span class="text-gray-800 font-bold text-lg md:text-3xl leading-relaxed">Đã xây kênh nhiều lần, nhưng vẫn thất bại.</span>
+                    </div>
+                    <div class="flex items-center gap-3 md:gap-4 bg-gray-50 p-4 md:p-5 rounded-xl md:rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left">
+                        <div class="bg-red-100 text-red-600 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined font-bold text-sm md:text-base">cancel</span>
+                        </div>
+                        <span class="text-gray-800 font-bold text-lg md:text-3xl leading-relaxed">Chạy quảng cáo tốn tiền nhưng không RA ĐƠN</span>
+                    </div>
+                    <div class="flex items-center gap-3 md:gap-4 bg-gray-50 p-4 md:p-5 rounded-xl md:rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left">
+                        <div class="bg-red-100 text-red-600 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined font-bold text-sm md:text-base">cancel</span>
+                        </div>
+                        <span class="text-gray-800 font-bold text-lg md:text-3xl leading-relaxed">Không biết bắt đầu từ đâu trên intetnet</span>
+                    </div>
+                    <div class="flex items-center gap-3 md:gap-4 bg-gray-50 p-4 md:p-5 rounded-xl md:rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-left">
+                        <div class="bg-red-100 text-red-600 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center flex-shrink-0">
+                            <span class="material-symbols-outlined font-bold text-sm md:text-base">cancel</span>
+                        </div>
+                        <span class="text-gray-800 font-bold text-lg md:text-3xl leading-relaxed">và còn nhiều vấn đề khác.........</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE TRUTH SECTION -->
+        <section class="py-20 md:py-32 bg-black relative overflow-hidden px-4 border-b-[12px] border-brand-red">
+            <div class="absolute inset-0 bg-hero-glow pointer-events-none opacity-50"></div>
+            <div class="absolute inset-0 bg-hero-grid pointer-events-none opacity-20"></div>
+
+            <div class="max-w-6xl mx-auto relative z-10 text-center">
+                <h2 class="text-xl md:text-5xl font-black text-white leading-[1.4] md:leading-[1.3] uppercase tracking-tight">
+                    <span class="block">Sự thật là: phần lớn doanh nghiệp thất bại trong</span>
+                    <span class="block">xây kênh thương hiệu cá nhân, không phải vì họ không cố gắng.</span>
+                    <span class="block text-brand-yellow">Họ thất bại vì: họ không có quy trình và hệ thống.</span>
+                </h2>
+            </div>
+        </section>
+
+        <!-- TRUTH NO ONE TELLS YOU SECTION -->
+        <section class="py-16 md:py-20 bg-white px-4 relative overflow-hidden">
+            <div class="max-w-5xl mx-auto relative z-10">
+                <div class="border-4 md:border-8 border-gray-100 rounded-[2rem] md:rounded-[3rem] p-6 md:p-16 bg-white shadow-2xl">
+                    <h2 class="text-2xl md:text-5xl font-black text-brand-red mb-10 md:mb-16 text-center uppercase tracking-tight leading-tight">
+                        SỰ THẬT KHÔNG AI NÓI CHO BẠN
+                    </h2>
+
+                    <div class="space-y-10 md:space-y-12 text-black">
+                        <div class="space-y-4 md:space-y-6">
+                            <p class="text-lg md:text-3xl font-bold leading-[1.5] md:leading-[1.6]">
+                                Rất nhiều người kinh doanh online đang xây kênh thương hiệu cá nhân bằng:
+                            </p>
+                            <ul class="space-y-3 md:space-y-4 text-lg md:text-3xl font-black pl-4">
+                                <li>- CẢM TÍNH</li>
+                                <li>- MAY MẮN</li>
+                                <li>- TỰ MÒ VÀ HY VỌNG MÌNH ĐANG LÀM ĐÚNG</li>
+                            </ul>
+                        </div>
+
+                        <div class="space-y-3 md:space-y-4 text-lg md:text-3xl font-bold leading-relaxed">
+                            <p>Họ đăng bài.</p>
+                            <p>Họ quay video.</p>
+                            <p>Họ chạy quảng cáo.</p>
+                            <p class="text-brand-red font-black">Nhưng… vẫn không có khách.</p>
+                        </div>
+
+                        <div class="space-y-4 md:space-y-6">
+                            <p class="text-lg md:text-3xl font-black leading-[1.5] md:leading-[1.6]">
+                                Nhưng họ không hiểu một điều quan trọng:
+                            </p>
+                            <ul class="space-y-3 md:space-y-4 text-lg md:text-3xl font-bold pl-4">
+                                <li>- Xây kênh thương hiệu cá nhân không phải là đăng cho có</li>
+                                <li>- Xây kênh thương hiệu cá nhân là xây hệ thống tạo khách hàng</li>
+                            </ul>
+                        </div>
+
+                        <div class="space-y-4 md:space-y-6 pt-6 md:pt-8 border-t border-gray-100">
+                            <p class="text-lg md:text-3xl font-black leading-[1.5] md:leading-[1.6] text-brand-red">
+                                Khi kênh ĐÚNG:
+                            </p>
+                            <ul class="space-y-3 md:space-y-4 text-lg md:text-3xl font-bold pl-4">
+                                <li>- Khách hàng tự tìm đến bạn mỗi ngày</li>
+                                <li>- Nội dung trở thành công cụ bán hàng</li>
+                                <li>- Bạn không cần phụ thuộc quảng cáo</li>
+                                <li>- Thương hiệu cá nhân trở thành tài sản lâu dài</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMAGINE SECTION -->
+        <section class="py-20 md:py-32 bg-black relative overflow-hidden px-4 border-b-[12px] border-brand-red">
+            <div class="absolute inset-0 bg-hero-glow pointer-events-none opacity-40"></div>
+            <div class="absolute inset-0 bg-hero-grid pointer-events-none opacity-20"></div>
+
+            <div class="max-w-4xl mx-auto relative z-10 text-center">
+                <h2 class="text-3xl md:text-7xl font-black uppercase tracking-tight leading-tight text-brand-red drop-shadow-[0_0_30px_rgba(220,38,38,0.5)] mb-12">
+                    HÃY TƯỞNG TƯỢNG…
+                </h2>
+
+                <div class="text-white space-y-10 text-xl md:text-4xl font-bold leading-relaxed">
+                    <p class="text-gray-300">Hãy tưởng tượng một ngày bạn thức dậy và:</p>
+                    <ul class="space-y-6 inline-block text-left">
+                        <li class="flex items-center gap-4">
+                            <span class="text-brand-yellow text-2xl md:text-5xl">✓</span>
+                            <span>Có khách hàng mới nhắn tin mỗi ngày</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="text-brand-yellow text-2xl md:text-5xl">✓</span>
+                            <span>Fanpage có người theo dõi và tương tác liên tục</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="text-brand-yellow text-2xl md:text-5xl">✓</span>
+                            <span>Nội dung đăng thu hút hàng triệu người xem</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <span class="text-brand-yellow text-2xl md:text-5xl">✓</span>
+                            <span>Khách hàng tin tưởng và mua hàng từ bạn</span>
+                        </li>
+                    </ul>
+
+                    <div class="pt-8">
+                        <p class="bg-brand-red/20 py-4 px-6 rounded-2xl inline-block border border-brand-red/30">
+                            Bạn không cần chạy quảng cáo mỗi ngày <span class="text-brand-yellow font-black">nhưng vẫn có đơn đều</span>
+                        </p>
+                    </div>
+
+                    <div class="pt-10 border-t border-white/10 max-w-5xl mx-auto">
+                        <p class="text-white text-2xl md:text-4xl font-bold mb-4">Đó chính là Bản Đồ Xây Kênh Thương Hiệu Cá Nhân có thể làm</p>
+                        <p class="font-black text-brand-yellow text-2xl md:text-5xl uppercase tracking-tighter leading-[1.1]">Một hệ thống kinh doanh thành công trên Facebook Đúng.</p>
+                    </div>
+                </div>
+
+                <div class="mt-16 md:mt-24 text-center">
+                    <a href="#register-now" class="cta-button-animate bg-brand-yellow text-black font-black px-10 py-6 md:px-20 md:py-10 rounded-full text-xl md:text-5xl uppercase inline-block shadow-[0_0_60px_rgba(250,204,21,0.4)] hover:bg-brand-red hover:text-white transition-all duration-300 transform hover:scale-105">
+                        ĐĂNG KÝ NGAY
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- COURSE OVERVIEW & TARGET AUDIENCE SECTION -->
+        <section class="py-16 md:py-20 bg-white px-4 relative overflow-hidden">
+            <div class="max-w-5xl mx-auto relative z-10">
+                <div class="border-4 md:border-8 border-gray-100 rounded-[2rem] md:rounded-[3rem] p-6 md:p-16 bg-white shadow-2xl space-y-12 md:space-y-16">
+                    <div class="space-y-6 md:space-y-8">
+                        <h2 class="text-xl md:text-4xl font-black text-brand-red uppercase tracking-tight leading-tight text-center md:whitespace-nowrap">
+                            BẢN ĐỒ XÂY KÊNH THƯƠNG HIỆU CÁ NHÂN
+                        </h2>
+
+                        <div class="space-y-4 md:space-y-6 text-black">
+                            <p class="text-lg md:text-3xl font-bold leading-[1.5] md:leading-[1.6]">
+                                Khóa học 4 ngày này sẽ giúp bạn hiểu rõ:
+                            </p>
+                            <ul class="space-y-3 md:space-y-4 text-lg md:text-3xl font-medium pl-4">
+                                <li class="flex items-start gap-3"><span class="text-black shrink-0">-</span><span>Cách xây dựng kênh thương hiệu cá nhân bài bản trên Facebook</span></li>
+                                <li class="flex items-start gap-3"><span class="text-black shrink-0">-</span><span>Cách tạo ra khách hàng tiềm năng mỗi ngày bằng nội dung</span></li>
+                                <li class="flex items-start gap-3"><span class="text-black shrink-0">-</span><span>Cách biến người xem thành khách hàng trả tiền</span></li>
+                                <li class="flex items-start gap-3"><span class="text-black shrink-0">-</span><span>Cách xây dựng hệ thống nội dung bền vững, không phụ thuộc quảng cáo</span></li>
+                                <li class="flex items-start gap-3"><span class="text-black shrink-0">-</span><span>Cách khám kênh Facebook xem có bị gậy ẩn hay không?</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 md:space-y-8 pt-10 md:pt-16 border-t border-gray-100">
+                        <h2 class="text-2xl md:text-5xl font-black text-brand-red uppercase tracking-tight leading-tight text-center">
+                            KHÓA HỌC NÀY DÀNH CHO AI?
+                        </h2>
+
+                        <div class="space-y-4 md:space-y-6 text-black">
+                            <ul class="space-y-3 md:space-y-4 text-lg md:text-3xl font-medium pl-4">
+                                <li class="flex items-start gap-3"><span class="text-black shrink-0">-</span><span>Người kinh doanh online muốn xây kênh thương hiệu cá nhân bài bản</span></li>
+                                <li class="flex items-start gap-3"><span class="text-black shrink-0">-</span><span>Chủ doanh nghiệp muốn phát triển khách hàng từ Facebook</span></li>
+                                <li class="flex items-start gap-3"><span class="text-black shrink-0">-</span><span>Bác sĩ, dược sĩ, chuyên gia dinh dưỡng muốn xây uy tín cá nhân</span></li>
+                                <li class="flex items-start gap-3"><span class="text-black shrink-0">-</span><span>Người bán hàng nhưng chưa có khách ổn định mỗi ngày</span></li>
+                                <li class="flex items-start gap-3"><span class="text-black shrink-0">-</span><span>Người mới bắt đầu từ con số 0, chưa biết bắt đầu từ đâu</span></li>
+                                <li class="flex items-start gap-3"><span class="text-brand-red shrink-0">-</span><span>Người muốn bật kiếm tiền từ nội dung Facebook</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 md:mt-16 text-center">
+                        <a href="#register-now" class="cta-button-animate bg-brand-yellow text-black font-black px-8 py-4 md:px-12 md:py-6 rounded-xl text-lg md:text-2xl uppercase inline-block shadow-2xl hover:bg-brand-red hover:text-white transition-all duration-300 w-full md:w-auto">ĐĂNG KÝ NGAY</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT YOU WILL GET SECTION -->
+        <section class="py-20 md:py-24 bg-black relative overflow-hidden px-4">
+            <div class="absolute inset-0 bg-hero-glow pointer-events-none opacity-40"></div>
+            <div class="absolute inset-0 bg-hero-grid pointer-events-none opacity-20"></div>
+
+            <div class="max-w-6xl mx-auto relative z-10">
+                <div class="flex flex-col items-center text-center space-y-10 md:space-y-12">
+                    <div class="inline-block border-2 md:border-4 border-brand-red px-5 py-2 md:px-10 md:py-5 rounded-lg md:rounded-xl">
+                        <h2 class="text-xl md:text-4xl font-black text-brand-red uppercase tracking-tight font-display">
+                            Khóa Học Sẽ Mang Đến Gì Cho Bạn?
+                        </h2>
+                    </div>
+
+                    <div class="w-full max-w-4xl text-left space-y-8 md:space-y-10">
+                        <h3 class="text-2xl md:text-5xl font-black text-white uppercase tracking-tight text-center font-display">
+                            BẠN SẼ NHẬN ĐƯỢC GÌ?
+                        </h3>
+
+                        <ul class="space-y-4 md:space-y-6 text-lg md:text-3xl font-bold text-white leading-[1.5] md:leading-[1.6]">
+                            <li class="flex items-start gap-3 md:gap-4"><span class="text-white shrink-0">-</span><span>Biết từng bước xây kênh thương hiệu cá nhân bài bản, không còn làm theo cảm tính</span></li>
+                            <li class="flex items-start gap-3 md:gap-4"><span class="text-white shrink-0">-</span><span>Thu hút khách hàng tiềm năng mỗi ngày bằng hệ thống nội dung đã được kiểm chứng</span></li>
+                            <li class="flex items-start gap-3 md:gap-4"><span class="text-white shrink-0">-</span><span>Nắm bí quyết xây dựng thương hiệu cá nhân và cộng đồng nhanh, đúng hướng</span></li>
+                            <li class="flex items-start gap-3 md:gap-4"><span class="text-white shrink-0">-</span><span>Hiểu rõ vì sao kênh Facebook bị bóp tương tác, bị "gãy ẩn" và cách xử lý</span></li>
+                            <li class="flex items-start gap-3 md:gap-4"><span class="text-white shrink-0">-</span><span>Biết cách tạo nội dung không bao giờ bị bí ý tưởng</span></li>
+                            <li class="flex items-start gap-3 md:gap-4"><span class="text-white shrink-0">-</span><span>Biết cách viết bài và làm video khiến khách hàng tin và chủ động inbox</span></li>
+                            <li class="flex items-start gap-3 md:gap-4"><span class="text-white shrink-0">-</span><span>Biết cách biến Fanpage thành công cụ bán hàng tự động</span></li>
+                            <li class="flex items-start gap-3 md:gap-4"><span class="text-white shrink-0">-</span><span>Biết cách tăng 500 follow đầu tiên mà không cần chạy quảng cáo</span></li>
+                            <li class="flex items-start gap-3 md:gap-4"><span class="text-white shrink-0">-</span><span>Biết cách xây kênh đúng ngay từ đầu để không bị "đập đi làm lại"</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIFFICULTIES SECTION -->
+        <section class="py-16 md:py-24 bg-white px-4 relative overflow-hidden">
+            <div class="max-w-4xl mx-auto relative z-10 text-center">
+                <h2 class="text-2xl md:text-5xl font-black text-brand-red uppercase tracking-tight leading-tight mb-10 md:mb-16 font-display">
+                    Điều khó khăn khi bắt đầu <br>
+                    hoạt động kinh doanh trên Internet ?
+                </h2>
+
+                <div class="space-y-6 md:space-y-8 text-left max-w-3xl mx-auto">
+                    <ul class="space-y-4 md:space-y-6 text-lg md:text-3xl font-bold text-black leading-[1.5] md:leading-[1.6]">
+                        <li class="flex items-start gap-3 md:gap-4"><span class="text-black shrink-0">-</span><span>Không biết bắt đầu từ đâu?</span></li>
+                        <li class="flex items-start gap-3 md:gap-4"><span class="text-black shrink-0">-</span><span>Làm sao để có khách hàng mỗi ngày?</span></li>
+                        <li class="flex items-start gap-3 md:gap-4"><span class="text-black shrink-0">-</span><span>Vì sao đăng bài mãi không ai quan tâm?</span></li>
+                        <li class="flex items-start gap-3 md:gap-4"><span class="text-black shrink-0">-</span><span>Làm sao để xây dựng thương hiệu cá nhân để khách hàng tin tưởng?</span></li>
+                        <li class="flex items-start gap-3 md:gap-4"><span class="text-black shrink-0">-</span><span>Làm thế nào để bán được nhiều hơn mà không phải giảm giá?</span></li>
+                        <li class="flex items-start gap-3 md:gap-4"><span class="text-black shrink-0">-</span><span>Làm thế nào để biến Fanpage thành công cụ bán hàng?</span></li>
+                        <li class="flex items-start gap-3 md:gap-4"><span class="text-black shrink-0">-</span><span>Làm thế nào để có một hệ thống tạo khách hàng tự động?</span></li>
+                    </ul>
+                </div>
+
+                <div class="mt-12 md:mt-16">
+                    <a href="#register-now" class="cta-button-animate bg-brand-yellow text-black font-black px-8 py-4 md:px-12 md:py-6 rounded-xl text-lg md:text-3xl uppercase inline-block shadow-2xl hover:bg-brand-red hover:text-white transition-all duration-300 w-full md:w-auto">
+                        Đăng Ký Ngay
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- DECISION SECTION -->
+        <section class="py-24 bg-black relative overflow-hidden px-4">
+            <div class="absolute inset-0 bg-hero-glow pointer-events-none opacity-40"></div>
+            <div class="absolute inset-0 bg-hero-grid pointer-events-none opacity-20"></div>
+
+            <div class="max-w-5xl mx-auto relative z-10 text-left space-y-20">
+                <div class="space-y-8">
+                    <h2 class="text-3xl md:text-5xl font-black text-brand-red uppercase tracking-tight leading-tight font-display">
+                        NHƯNG BẠN CẦN RA QUYẾT ĐỊNH
+                    </h2>
+                    <div class="text-xl md:text-3xl font-bold text-white leading-[1.6] space-y-6">
+                        <p>Có hai loại người.</p>
+                        <p><span class="text-brand-yellow">Loại thứ nhất:</span> Đọc xong =&gt; Suy nghĩ =&gt; Rồi quay lại cuộc sống cũ</p>
+                        <div class="pt-8 space-y-4">
+                            <p class="text-brand-yellow">Loại thứ hai:</p>
+                            <ul class="space-y-2">
+                                <li>- Họ quyết định HÀNH ĐỘNG.</li>
+                                <li>- Và chính những người hành động</li>
+                                <li>- Thay đổi cuộc đời mình.</li>
+                            </ul>
+                        </div>
+                        <p class="pt-8 font-black text-2xl md:text-5xl text-white">Và bắt đầu xây dựng hệ thống marketing cho doanh nghiệp của bạn.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-8 pt-16 border-t border-white/10">
+                    <h2 class="text-3xl md:text-5xl font-black text-brand-red uppercase tracking-tight leading-tight font-display">
+                        QUYẾT ĐỊNH LÀ CỦA BẠN
+                    </h2>
+                    <div class="text-xl md:text-3xl font-bold text-white leading-[1.6] space-y-6">
+                        <p>Bạn có thể tiếp tục:</p>
+                        <ul class="space-y-2">
+                            <li>- Tự mò</li>
+                            <li>- Mất tiền quảng cáo</li>
+                            <li>- Tìm khách hàng từng người</li>
+                        </ul>
+                        <p class="pt-8 text-brand-yellow font-black">Hoặc bạn có thể: Xây dựng hệ thống KINH DOANH THÀNH CÔNG TRÊN FACEBOOK</p>
+                    </div>
+
+                    <div class="pt-10 flex justify-center">
+                        <a href="#register-now" class="cta-button-animate bg-brand-yellow text-black font-black px-12 py-6 rounded-xl text-xl md:text-3xl uppercase inline-block shadow-2xl hover:bg-brand-red hover:text-white transition-all duration-300">
+                            Đăng Ký Ngay
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY JOIN SECTION -->
+        <section class="py-24 bg-black relative overflow-hidden px-4 border-t border-white/10">
+            <div class="absolute inset-0 bg-hero-glow pointer-events-none"></div>
+            <div class="absolute inset-0 bg-hero-grid pointer-events-none opacity-30"></div>
+
+            <div class="max-w-5xl mx-auto relative z-10 text-left space-y-12">
+                <div class="space-y-4">
+                    <p class="text-2xl md:text-4xl text-white font-bold italic">Và bắt đầu xây dựng hệ thống marketing cho doanh nghiệp của bạn.</p>
+                    <h2 class="text-3xl md:text-5xl font-black text-brand-yellow uppercase tracking-tight leading-tight font-display">Vì sao bạn nên tham gia khóa học này?</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <div class="bg-black/60 backdrop-blur-sm p-8 rounded-3xl border-2 border-brand-yellow/50 hover:border-brand-yellow transition-all shadow-[0_0_30px_rgba(250,204,21,0.1)]">
+                        <h4 class="text-brand-red font-black text-xl md:text-3xl mb-4 leading-tight uppercase">TRÁNH MẤT TIỀN THỬ SAI - MÒ MẪM</h4>
+                        <p class="text-white text-xl md:text-3xl leading-relaxed">Tiết kiệm thời gian và chi phí với quy trình chuẩn đã được mình chứng trong nhiều năm.</p>
+                    </div>
+                    <div class="bg-black/60 backdrop-blur-sm p-8 rounded-3xl border-2 border-brand-yellow/50 hover:border-brand-yellow transition-all shadow-[0_0_30px_rgba(250,204,21,0.1)]">
+                        <h4 class="text-brand-red font-black text-xl md:text-3xl mb-4 leading-tight uppercase">ĐẠT ĐƯỢC MỤC TIÊU TRONG KINH DOANH</h4>
+                        <p class="text-white text-xl md:text-3xl leading-relaxed">Khóa học sẽ giúp bạn biết cách đạt mục tiêu kinh doanh của mình một cách nhanh chóng và hiệu quả.</p>
+                    </div>
+                    <div class="bg-black/60 backdrop-blur-sm p-8 rounded-3xl border-2 border-brand-yellow/50 hover:border-brand-yellow transition-all shadow-[0_0_30px_rgba(250,204,21,0.1)]">
+                        <h4 class="text-brand-red font-black text-xl md:text-3xl mb-4 leading-tight uppercase">XÂY DỰNG THƯƠNG HIỆU CÁ NHÂN TRÊN FACEBOOK</h4>
+                        <p class="text-white text-xl md:text-3xl leading-relaxed">Học cách xây dựng thương hiệu và phát triển thương hiệu một cách bài bản, nhanh chóng.</p>
+                    </div>
+                    <div class="bg-black/60 backdrop-blur-sm p-8 rounded-3xl border-2 border-brand-yellow/50 hover:border-brand-yellow transition-all shadow-[0_0_30px_rgba(250,204,21,0.1)]">
+                        <h4 class="text-brand-red font-black text-xl md:text-3xl mb-4 leading-tight uppercase">THẤU HIỂU KHÁCH HÀNG</h4>
+                        <p class="text-white text-xl md:text-3xl leading-relaxed">Học cách nghiên cứu khách hàng, nghiên cứu thị trường để tìm ra lợi thế trong kinh doanh.</p>
+                    </div>
+                    <div class="bg-black/60 backdrop-blur-sm p-8 rounded-3xl border-2 border-brand-yellow/50 hover:border-brand-yellow transition-all shadow-[0_0_30px_rgba(250,204,21,0.1)]">
+                        <h4 class="text-brand-red font-black text-xl md:text-3xl mb-4 leading-tight uppercase">XÂY DỰNG QUY TRÌNH QUẢNG CÁO FACEBOOK ĐÚNG</h4>
+                        <p class="text-white text-xl md:text-3xl leading-relaxed">Biết cách xây dựng hệ thống quảng cáo làm việc 24/7 hiệu quả. Không lo nền tảng thay đổi.</p>
+                    </div>
+                    <div class="bg-black/60 backdrop-blur-sm p-8 rounded-3xl border-2 border-brand-yellow/50 hover:border-brand-yellow transition-all shadow-[0_0_30px_rgba(250,204,21,0.1)]">
+                        <h4 class="text-brand-red font-black text-xl md:text-3xl mb-4 leading-tight uppercase">XÂY DỰNG HỆ THỐNG KINH DOANH THÀNH CÔNG</h4>
+                        <p class="text-white text-xl md:text-3xl leading-relaxed">Xây dựng hệ thống kinh doanh hoạt động tự động mà không cần mình phải có mặt.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUTION SECTION -->
+        <section class="py-20 bg-black relative overflow-hidden px-4 border-y border-zinc-900">
+            <div class="absolute inset-0 bg-hero-glow pointer-events-none opacity-50"></div>
+            <div class="absolute inset-0 bg-hero-grid pointer-events-none opacity-20"></div>
+
+            <div class="max-w-6xl mx-auto relative z-10">
+                <div class="text-center mb-16">
+                    <div class="text-brand-yellow font-black mb-4 uppercase tracking-widest text-xl md:text-3xl drop-shadow-md">Giải Pháp Đột Phá Dành Cho Bạn</div>
+                    <h2 class="text-brand-red font-black text-3xl md:text-6xl mb-10 tracking-tight uppercase leading-tight font-display">BẢN ĐỒ XÂY KÊNH <br class="hidden md:block"> THƯƠNG HIỆU CÁ NHÂN 2026</h2>
+                    <div class="max-w-4xl mx-auto bg-zinc-900/60 border border-zinc-800 p-6 md:p-8 rounded-3xl shadow-xl backdrop-blur-sm">
+                        <p class="text-lg md:text-2xl text-gray-300 leading-relaxed">
+                            Không còn đoán mò. Không còn đăng bài trong vô vọng. Đây là
+                            <span class="text-white font-bold border-b-2 border-brand-yellow pb-1 mx-2">công thức 3 bước đã được kiểm chứng</span>
+                            giúp bạn biến kênh Facebook thành "cỗ máy" thu hút khách hàng tự động.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-10">
+                    <div class="relative z-10 bg-brand-card p-8 md:p-10 rounded-3xl border border-zinc-800 hover:border-brand-yellow/50 hover:shadow-[0_0_40px_rgba(250,204,21,0.1)] transition-all duration-500 group flex flex-col h-full">
+                        <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-brand-darkest border border-zinc-700 px-6 py-2 rounded-full text-brand-yellow font-black tracking-widest text-xs md:text-sm group-hover:border-brand-yellow transition-colors shadow-lg whitespace-nowrap">GIAI ĐOẠN 01</div>
+                        <h3 class="font-black text-2xl md:text-3xl text-white mb-2 uppercase text-center mt-6 font-display">GIẢI MÃ THUẬT TOÁN</h3>
+                        <p class="text-brand-yellow font-bold text-xs md:text-base tracking-widest uppercase mb-6 text-center">Audit &amp; Tối Ưu Profile</p>
+                        <p class="text-gray-400 text-base md:text-lg leading-relaxed mb-8 flex-grow text-center">Gỡ bỏ hoàn toàn các 'án phạt ngầm' khiến Facebook bóp tương tác kênh của bạn. Cài đặt lại Profile chuẩn SEO.</p>
+                        <ul class="space-y-4 mt-auto pt-6 border-t border-zinc-800/50">
+                            <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-red shrink-0">verified</span><span class="text-gray-200 font-medium leading-snug">Biến trang cá nhân thành 'Phễu đón khách'</span></li>
+                            <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-red shrink-0">verified</span><span class="text-gray-200 font-medium leading-snug">Loại bỏ rác &amp; vi phạm thuật toán</span></li>
+                            <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-red shrink-0">verified</span><span class="text-gray-200 font-medium leading-snug">Kích hoạt lại luồng phân phối tự nhiên</span></li>
+                        </ul>
+                    </div>
+                    <div class="relative z-10 bg-brand-card p-8 md:p-10 rounded-3xl border border-zinc-800 hover:border-brand-yellow/50 hover:shadow-[0_0_40px_rgba(250,204,21,0.1)] transition-all duration-500 group flex flex-col h-full">
+                        <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-brand-darkest border border-zinc-700 px-6 py-2 rounded-full text-brand-yellow font-black tracking-widest text-xs md:text-sm group-hover:border-brand-yellow transition-colors shadow-lg whitespace-nowrap">GIAI ĐOẠN 02</div>
+                        <h3 class="font-black text-2xl md:text-3xl text-white mb-2 uppercase text-center mt-6 font-display">MA TRẬN NỘI DUNG</h3>
+                        <p class="text-brand-yellow font-bold text-xs md:text-base tracking-widest uppercase mb-6 text-center">Content Strategy</p>
+                        <p class="text-gray-400 text-base md:text-lg leading-relaxed mb-8 flex-grow text-center">Sở hữu công thức viết bài 'thôi miên', chạm đúng tử huyệt cảm xúc. Khách hàng không thể rời mắt khỏi kênh của bạn.</p>
+                        <ul class="space-y-4 mt-auto pt-6 border-t border-zinc-800/50">
+                            <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-red shrink-0">verified</span><span class="text-gray-200 font-medium leading-snug">Kho ý tưởng vô tận, không bao giờ bí</span></li>
+                            <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-red shrink-0">verified</span><span class="text-gray-200 font-medium leading-snug">Đăng bài nào, tương tác nổ bài đó</span></li>
+                            <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-red shrink-0">verified</span><span class="text-gray-200 font-medium leading-snug">Giữ chân người xem từ giây đầu tiên</span></li>
+                        </ul>
+                    </div>
+                    <div class="relative z-10 bg-brand-card p-8 md:p-10 rounded-3xl border border-zinc-800 hover:border-brand-yellow/50 hover:shadow-[0_0_40px_rgba(250,204,21,0.1)] transition-all duration-500 group flex flex-col h-full">
+                        <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-brand-darkest border border-zinc-700 px-6 py-2 rounded-full text-brand-yellow font-black tracking-widest text-xs md:text-sm group-hover:border-brand-yellow transition-colors shadow-lg whitespace-nowrap">GIAI ĐOẠN 03</div>
+                        <h3 class="font-black text-2xl md:text-3xl text-white mb-2 uppercase text-center mt-6 font-display">ĐỊNH VỊ CHUYÊN GIA</h3>
+                        <p class="text-brand-yellow font-bold text-xs md:text-base tracking-widest uppercase mb-6 text-center">Authority &amp; Sales</p>
+                        <p class="text-gray-400 text-base md:text-lg leading-relaxed mb-8 flex-grow text-center">Vượt lên trên đối thủ bằng nhân hiệu độc bản. Khách hàng tự tìm đến, tự chốt đơn vì họ tin tưởng bạn tuyệt đối.</p>
+                        <ul class="space-y-4 mt-auto pt-6 border-t border-zinc-800/50">
+                            <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-red shrink-0">verified</span><span class="text-gray-200 font-medium leading-snug">Xây dựng uy tín tuyệt đối trong ngành</span></li>
+                            <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-red shrink-0">verified</span><span class="text-gray-200 font-medium leading-snug">Bán hàng tự nhiên như hơi thở</span></li>
+                            <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-red shrink-0">verified</span><span class="text-gray-200 font-medium leading-snug">Biến người theo dõi thành fan cuồng</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-20 text-center">
+                    <a href="#register-now" class="cta-button-animate bg-brand-yellow text-black font-black px-12 py-6 rounded-full text-xl md:text-2xl uppercase inline-block shadow-2xl hover:bg-brand-red hover:text-white transition-all duration-300">
+                        SỞ HỮU BẢN ĐỒ NGAY HÔM NAY
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- COURSE CONTENT -->
+        <section class="py-20 bg-brand-darkest px-4 text-white border-t border-zinc-800">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-brand-yellow font-black text-3xl md:text-5xl mb-16 text-center tracking-tight uppercase font-display">NỘI DUNG CHƯƠNG TRÌNH HỌC</h2>
+
+                <div class="space-y-6">
+                    <div class="bg-black/50 rounded-3xl border border-zinc-800 overflow-hidden hover:border-brand-red/30 transition-colors shadow-xl">
+                        <button onclick="toggleModule(0)" class="w-full p-6 md:p-10 flex items-center justify-between text-left group transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                                <div class="inline-block px-4 py-2 bg-brand-red text-white font-bold rounded-lg uppercase tracking-wider text-xs md:text-sm self-start md:self-auto">Module 1</div>
+                                <h3 class="text-xl md:text-3xl font-black text-white leading-tight group-hover:text-brand-yellow transition-colors font-display">Nền Tảng Xây Kênh Thương Hiệu Cá Nhân</h3>
+                            </div>
+                            <span class="material-symbols-outlined text-brand-yellow text-3xl md:text-5xl transition-transform duration-300 accordion-icon">expand_more</span>
+                        </button>
+                        <div class="module-content">
+                            <div class="px-6 pb-6 md:px-10 md:pb-10 border-t border-zinc-800/50 pt-8">
+                                <ul class="space-y-4 mb-8">
+                                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-yellow shrink-0 text-xl md:text-2xl">check_circle</span><span class="text-gray-300 text-base md:text-xl leading-relaxed">Cách định vị thương hiệu cá nhân rõ ràng trong lĩnh vực của bạn</span></li>
+                                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-yellow shrink-0 text-xl md:text-2xl">check_circle</span><span class="text-gray-300 text-base md:text-xl leading-relaxed">Xây dựng profile Facebook chuẩn thuật toán</span></li>
+                                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-yellow shrink-0 text-xl md:text-2xl">check_circle</span><span class="text-gray-300 text-base md:text-xl leading-relaxed">Cách tối ưu trang cá nhân để tạo sự tin tưởng ngay từ lần đầu khách hàng ghé thăm</span></li>
+                                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-yellow shrink-0 text-xl md:text-2xl">check_circle</span><span class="text-gray-300 text-base md:text-xl leading-relaxed">Những sai lầm khiến Facebook bóp reach mà nhiều người không biết</span></li>
+                                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-yellow shrink-0 text-xl md:text-2xl">check_circle</span><span class="text-gray-300 text-base md:text-xl leading-relaxed">3 cách kiểm tra gậy ẩn trên Facebook</span></li>
+                                </ul>
+                                <div class="bg-brand-red/10 border-l-4 border-brand-red p-5 md:p-6 rounded-r-2xl">
+                                    <p class="text-brand-yellow font-bold italic text-sm md:text-lg">Sau module này, bạn sẽ có một nền tảng kênh vững chắc để bắt đầu phát triển lâu dài.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/50 rounded-3xl border border-zinc-800 overflow-hidden hover:border-brand-red/30 transition-colors shadow-xl">
+                        <button onclick="toggleModule(1)" class="w-full p-6 md:p-10 flex items-center justify-between text-left group transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                                <div class="inline-block px-4 py-2 bg-brand-red text-white font-bold rounded-lg uppercase tracking-wider text-xs md:text-sm self-start md:self-auto">Module 2</div>
+                                <h3 class="text-xl md:text-3xl font-black text-white leading-tight group-hover:text-brand-yellow transition-colors font-display">Hệ Thống Nội Dung Thu Hút Khách Hàng</h3>
+                            </div>
+                            <span class="material-symbols-outlined text-brand-yellow text-3xl md:text-5xl transition-transform duration-300 accordion-icon">expand_more</span>
+                        </button>
+                        <div class="module-content">
+                            <div class="px-6 pb-6 md:px-10 md:pb-10 border-t border-zinc-800/50 pt-8">
+                                <ul class="space-y-4 mb-8">
+                                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-yellow shrink-0 text-xl md:text-2xl">check_circle</span><span class="text-gray-300 text-base md:text-xl leading-relaxed">Công thức xây dựng nội dung khiến khách hàng dừng lại đọc bài viết của bạn</span></li>
+                                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-yellow shrink-0 text-xl md:text-2xl">check_circle</span><span class="text-gray-300 text-base md:text-xl leading-relaxed">7 dạng content giúp tăng tương tác và xây dựng niềm tin</span></li>
+                                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-yellow shrink-0 text-xl md:text-2xl">check_circle</span><span class="text-gray-300 text-base md:text-xl leading-relaxed">Cách viết bài khiến khách hàng chủ động inbox hỏi mua</span></li>
+                                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-yellow shrink-0 text-xl md:text-2xl">check_circle</span><span class="text-gray-300 text-base md:text-xl leading-relaxed">Hệ thống ý tưởng nội dung giúp bạn không bao giờ bí ý tưởng</span></li>
+                                </ul>
+                                <div class="bg-brand-red/10 border-l-4 border-brand-red p-5 md:p-6 rounded-r-2xl">
+                                    <p class="text-brand-yellow font-bold italic text-sm md:text-lg">Sau module này, bạn sẽ có một hệ thống nội dung rõ ràng và dễ triển khai mỗi ngày.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black/50 rounded-3xl border border-zinc-800 overflow-hidden hover:border-brand-red/30 transition-colors shadow-xl">
+                        <button onclick="toggleModule(2)" class="w-full p-6 md:p-10 flex items-center justify-between text-left group transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                                <div class="inline-block px-4 py-2 bg-brand-red text-white font-bold rounded-lg uppercase tracking-wider text-xs md:text-sm self-start md:self-auto">Module 3</div>
+                                <h3 class="text-xl md:text-3xl font-black text-white leading-tight group-hover:text-brand-yellow transition-colors font-display">Chiến Lược Tăng Trưởng Và Chuyển Đổi</h3>
+                            </div>
+                            <span class="material-symbols-outlined text-brand-yellow text-3xl md:text-5xl transition-transform duration-300 accordion-icon">expand_more</span>
+                        </button>
+                        <div class="module-content">
+                            <div class="px-6 pb-6 md:px-10 md:pb-10 border-t border-zinc-800/50 pt-8">
+                                <ul class="space-y-4 mb-8">
+                                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-yellow shrink-0 text-xl md:text-2xl">check_circle</span><span class="text-gray-300 text-base md:text-xl leading-relaxed">Cách tăng reach tự nhiên mà không cần chạy quảng cáo</span></li>
+                                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-yellow shrink-0 text-xl md:text-2xl">check_circle</span><span class="text-gray-300 text-base md:text-xl leading-relaxed">Chiến lược xây dựng uy tín để trở thành chuyên gia trong mắt khách hàng</span></li>
+                                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-yellow shrink-0 text-xl md:text-2xl">check_circle</span><span class="text-gray-300 text-base md:text-xl leading-relaxed">Cách biến Facebook cá nhân thành một công cụ bán hàng hiệu quả</span></li>
+                                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-yellow shrink-0 text-xl md:text-2xl">check_circle</span><span class="text-gray-300 text-base md:text-xl leading-relaxed">Quy trình biến người đọc thành khách hàng thực sự</span></li>
+                                </ul>
+                                <div class="bg-brand-red/10 border-l-4 border-brand-red p-5 md:p-6 rounded-r-2xl">
+                                    <p class="text-brand-yellow font-bold italic text-sm md:text-lg">Sau module này, kênh của bạn sẽ không chỉ có tương tác mà còn tạo ra khách hàng.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 md:mt-24 text-center">
+                    <a href="#register-now" class="cta-button-animate bg-brand-yellow text-black font-black px-10 py-6 md:px-20 md:py-10 rounded-full text-xl md:text-4xl uppercase inline-block shadow-[0_0_60px_rgba(250,204,21,0.4)] hover:bg-brand-red hover:text-white transition-all duration-300 transform hover:scale-105">
+                        ĐĂNG KÝ NGAY
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT COACH -->
+        <section class="py-16 md:py-20 bg-[#f5f5f5] px-4 relative overflow-hidden">
+            <div class="max-w-6xl mx-auto relative z-10">
+                <div class="bg-black rounded-[1.5rem] md:rounded-[2rem] overflow-hidden relative shadow-2xl">
+                    <div class="absolute inset-0 bg-hero-grid pointer-events-none opacity-20"></div>
+                    <div class="absolute top-0 left-0 w-full md:w-1/2 h-full bg-gradient-to-b md:bg-gradient-to-r from-red-600/40 to-transparent pointer-events-none"></div>
+
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8 lg:gap-16 p-6 md:p-12 lg:p-16 relative z-10">
+                        <div class="relative group w-full max-w-[240px] md:max-w-sm flex justify-center mt-4 md:mt-0">
+                            <div class="absolute inset-0 bg-brand-yellow/20 rounded-full blur-[60px] md:blur-[80px] z-0"></div>
+                            <img src="https://lh3.googleusercontent.com/d/1jy3XHLugsIO6v92V1we9O_XMUVQFnLzy" alt="Diễm Thúy - Coach Xây Kênh" class="relative w-full object-contain drop-shadow-[0_0_30px_rgba(250,204,21,0.4)] z-10 scale-110 md:scale-125 origin-bottom" style="height: auto !important;">
+                        </div>
+
+                        <div class="max-w-xl w-full text-center md:text-left relative z-20">
+                            <div class="mb-6 md:mb-8">
+                                <h2 class="text-3xl md:text-6xl font-black text-brand-yellow mb-2 tracking-tight font-display">Diễm Thúy</h2>
+                                <p class="text-base md:text-xl text-gray-300 font-medium tracking-wide">Coach Xây Kênh Thương Hiệu Cá Nhân</p>
+                            </div>
+
+                            <ul class="space-y-3 md:space-y-4 text-left">
+                                <li class="flex items-start gap-3 md:gap-4">
+                                    <div class="bg-green-500 rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                                        <span class="material-symbols-outlined text-white text-[10px] md:text-sm font-bold">check</span>
+                                    </div>
+                                    <span class="text-gray-200 text-sm md:text-lg leading-snug">Hơn 17 năm kinh nghiệm kinh doanh trong lĩnh vực chuỗi nhà thuốc</span>
+                                </li>
+                                <li class="flex items-start gap-3 md:gap-4">
+                                    <div class="bg-green-500 rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                                        <span class="material-symbols-outlined text-white text-[10px] md:text-sm font-bold">check</span>
+                                    </div>
+                                    <span class="text-gray-200 text-sm md:text-lg leading-snug">Chuyên gia đào tạo và hướng dẫn xây kênh thương hiệu cá nhân trên nền tảng Facebook</span>
+                                </li>
+                                <li class="flex items-start gap-3 md:gap-4">
+                                    <div class="bg-green-500 rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                                        <span class="material-symbols-outlined text-white text-[10px] md:text-sm font-bold">check</span>
+                                    </div>
+                                    <span class="text-gray-200 text-sm md:text-lg leading-snug">Giám đốc Phát triển Bets Chapter BNI HN6 – mạng lưới kết nối doanh nghiệp toàn cầu</span>
+                                </li>
+                                <li class="flex items-start gap-3 md:gap-4">
+                                    <div class="bg-green-500 rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                                        <span class="material-symbols-outlined text-white text-[10px] md:text-sm font-bold">check</span>
+                                    </div>
+                                    <span class="text-gray-200 text-sm md:text-lg leading-snug">Chủ sở hữu hệ thống Fanpage tổng hơn 1 triệu follower</span>
+                                </li>
+                                <li class="flex items-start gap-3 md:gap-4">
+                                    <div class="bg-green-500 rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                                        <span class="material-symbols-outlined text-white text-[10px] md:text-sm font-bold">check</span>
+                                    </div>
+                                    <span class="text-gray-200 text-sm md:text-lg leading-snug">Chủ sở hữu 2 kênh YouTube đạt Nút Bạc</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUCCESS STORIES -->
+        <section class="relative py-20 bg-black px-4 border-t border-zinc-900 overflow-hidden">
+            <div class="absolute inset-0 bg-hero-glow pointer-events-none opacity-40"></div>
+            <div class="max-w-6xl mx-auto text-center z-10">
+                <h2 class="text-brand-red font-black text-3xl md:text-7xl mb-6 tracking-tight uppercase drop-shadow-[0_0_20px_rgba(220,38,38,0.3)] font-display">KẾT QUẢ CỦA NHỮNG HỌC VIÊN KHÓA TRƯỚC</h2>
+                <p class="text-lg md:text-3xl text-white mb-16 font-bold max-w-4xl mx-auto leading-relaxed">Và hàng trăm học viên đã áp dụng Bản Đồ và đạt kết quả đột phá...</p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-brand-card rounded-2xl overflow-hidden border border-zinc-800 hover:border-red-600/50 transition-colors group">
+                        <div class="relative aspect-[3/4] overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/d/1CfVFvp7AEkPMaPGaBMkZoTzC34t2RIFT" alt="Đào Văn Chính" class="w-full h-full object-cover !h-full !object-top">
+                        </div>
+                        <div class="p-8 text-left">
+                            <h3 class="font-black text-2xl md:text-3xl mb-3 text-brand-yellow drop-shadow-[0_0_10px_rgba(250,204,21,0.2)] font-display">Đào Văn Chính</h3>
+                            <p class="text-white text-base md:text-lg leading-relaxed font-medium">Một chuyên gia chăm sóc sức khỏe chủ động Cơ - Xương - Khớp</p>
+                        </div>
+                    </div>
+                    <div class="bg-brand-card rounded-2xl overflow-hidden border border-zinc-800 hover:border-red-600/50 transition-colors group">
+                        <div class="relative aspect-[3/4] overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/d/1pP0IOYbCPEon9F2Pb5vhW2yxIhce2NqL" alt="Vưu Xuân Hào" class="w-full h-full object-cover !h-full !object-top">
+                        </div>
+                        <div class="p-8 text-left">
+                            <h3 class="font-black text-2xl md:text-3xl mb-3 text-brand-yellow drop-shadow-[0_0_10px_rgba(250,204,21,0.2)] font-display">Vưu Xuân Hào</h3>
+                            <p class="text-white text-base md:text-lg leading-relaxed font-medium">Một chuyên gia đào tạo và cung cấp dịch vụ ứng dụng AI vào trong kinh doanh.</p>
+                        </div>
+                    </div>
+                    <div class="bg-brand-card rounded-2xl overflow-hidden border border-zinc-800 hover:border-red-600/50 transition-colors group">
+                        <div class="relative aspect-[3/4] overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/d/1x8Qq-9vECk4U8APisbImjQp7ta7jOhtn" alt="Dược Sĩ Ly" class="w-full h-full object-cover !h-full !object-top">
+                        </div>
+                        <div class="p-8 text-left">
+                            <h3 class="font-black text-2xl md:text-3xl mb-3 text-brand-yellow drop-shadow-[0_0_10px_rgba(250,204,21,0.2)] font-display">Dược Sĩ Ly</h3>
+                            <p class="text-white text-base md:text-lg leading-relaxed font-medium">Chia sẻ kiến thức về sức khoẻ, làm đẹp giúp mọi nhà khoẻ mạnh và hạnh phúc hơn</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 md:mt-16 text-center">
+                    <a href="#register-now" class="cta-button-animate bg-brand-yellow text-black font-black px-8 py-4 md:px-12 md:py-6 rounded-xl text-lg md:text-2xl uppercase inline-block shadow-2xl hover:bg-brand-red hover:text-white transition-all duration-300 w-full md:w-auto">BẮT ĐẦU XÂY KÊNH NGAY</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHECKOUT SECTION -->
+        <section id="checkout" class="relative bg-white px-4 py-20 overflow-hidden border-t border-gray-200">
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 items-stretch">
+                    <!-- Left Column: Pricing Summary -->
+                    <div class="bg-white rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-12 text-black shadow-2xl relative border border-gray-100">
+                        <div class="absolute -top-5 md:-top-6 left-1/2 -translate-x-1/2 bg-brand-yellow px-4 py-2 md:px-6 md:py-2 rounded-full font-black uppercase text-xs md:text-lg shadow-lg whitespace-nowrap">Cơ hội duy nhất trong hôm nay</div>
+
+                        <h2 class="text-lg md:text-4xl font-black text-center mb-8 md:mb-10 uppercase tracking-tight text-brand-red font-display">TỔNG KẾT GIÁ TRỊ NHẬN ĐƯỢC</h2>
+
+                        <div class="space-y-3 md:space-y-4 mb-8 md:mb-10 text-base md:text-xl">
+                            <div class="flex justify-between items-center border-b border-gray-100 pb-2 md:pb-3">
+                                <span class="text-gray-700 font-medium text-sm md:text-xl">1. Bản Đồ Xây Kênh Facebook 2026</span>
+                                <span class="font-bold text-sm md:text-xl">4.000.000đ</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-gray-100 pb-2 md:pb-3">
+                                <span class="text-gray-700 font-medium text-sm md:text-xl">2. Quy trình Khám Kênh Chuyên Sâu</span>
+                                <span class="font-bold text-sm md:text-xl">3.868.000đ</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-gray-100 pb-2 md:pb-3">
+                                <span class="text-gray-700 font-medium text-sm md:text-xl">3. Chiến lược làm content không bị bí nội dung</span>
+                                <span class="font-bold text-sm md:text-xl">2.000.000đ</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-gray-100 pb-2 md:pb-3">
+                                <span class="text-gray-700 font-medium text-sm md:text-xl">4. Phương pháp bảo vệ kênh Facebook</span>
+                                <span class="font-bold text-sm md:text-xl">1.000.000đ</span>
+                            </div>
+
+                            <div class="flex justify-between items-center pt-4 text-xl md:text-3xl">
+                                <span class="font-black uppercase">Tổng giá trị:</span>
+                                <span class="line-through text-red-500 font-bold decoration-2 text-xl md:text-3xl">10.868.000đ</span>
+                            </div>
+                        </div>
+
+                        <div class="text-center bg-gray-50 p-5 md:p-8 rounded-2xl border border-gray-100">
+                            <p class="text-xs md:text-base uppercase tracking-widest mb-2 font-bold text-gray-500">Giá Ưu Đãi Chỉ Hôm Nay</p>
+                            <p class="text-3xl md:text-6xl font-black text-brand-red mb-6 md:mb-8 drop-shadow-sm font-display">986.000đ</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Registration Form -->
+                    <div class="w-full h-full text-center lg:text-left relative">
+                        <h2 class="text-xl md:text-4xl font-black text-brand-red mb-4 uppercase tracking-tight md:whitespace-nowrap font-display">ĐĂNG KÝ THAM DỰ KHÓA HỌC</h2>
+                        <p class="text-lg md:text-3xl font-black text-brand-red mb-8 uppercase tracking-tight md:whitespace-nowrap font-display">"Bản Đồ Xây Kênh Thương Hiệu Cá Nhân"</p>
+
+                        <div id="register-now" class="scroll-mt-24"></div>
+
+                        <!-- FORM ĐĂNG KÝ KHÓA HỌC - 3 TRƯỜNG -->
+                        <form id="registration-form" class="w-full bg-white rounded-3xl border-2 border-gray-200 p-6 md:p-8 shadow-2xl text-left space-y-4 md:space-y-5">
+
+                            <!-- Họ và tên -->
+                            <div>
+                                <label for="fullname" class="block font-bold text-gray-800 text-sm md:text-base mb-2">
+                                    Họ và tên <span class="text-brand-red">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    id="fullname"
+                                    name="fullname"
+                                    required
+                                    placeholder="Nhập họ và tên của bạn"
+                                    class="w-full px-4 py-3 md:py-4 border-2 border-gray-200 rounded-xl text-base md:text-lg font-medium text-black placeholder-gray-400 focus:border-brand-red focus:outline-none transition-colors"
+                                >
+                            </div>
+
+                            <!-- Số điện thoại -->
+                            <div>
+                                <label for="phone" class="block font-bold text-gray-800 text-sm md:text-base mb-2">
+                                    Số điện thoại (Zalo) <span class="text-brand-red">*</span>
+                                </label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    required
+                                    pattern="(0|\+84)[0-9]{9,10}"
+                                    placeholder="Ví dụ: 0987654321"
+                                    class="w-full px-4 py-3 md:py-4 border-2 border-gray-200 rounded-xl text-base md:text-lg font-medium text-black placeholder-gray-400 focus:border-brand-red focus:outline-none transition-colors"
+                                >
+                                <p class="text-xs md:text-sm text-gray-500 mt-1">Số điện thoại có Zalo để BTC gửi link Zoom</p>
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block font-bold text-gray-800 text-sm md:text-base mb-2">
+                                    Email <span class="text-brand-red">*</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    placeholder="email@example.com"
+                                    class="w-full px-4 py-3 md:py-4 border-2 border-gray-200 rounded-xl text-base md:text-lg font-medium text-black placeholder-gray-400 focus:border-brand-red focus:outline-none transition-colors"
+                                >
+                            </div>
+
+                            <!-- Tổng kết giá -->
+                            <div class="bg-yellow-50 border-2 border-brand-yellow rounded-2xl p-4 md:p-5 my-4">
+                                <div class="flex justify-between items-center text-sm md:text-base text-gray-700 mb-2">
+                                    <span>Học phí gốc:</span>
+                                    <span class="line-through">10.868.000đ</span>
+                                </div>
+                                <div class="flex justify-between items-center font-black text-lg md:text-2xl text-brand-red">
+                                    <span>BẠN CHỈ TRẢ:</span>
+                                    <span>986.000đ</span>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button
+                                type="submit"
+                                class="cta-button-animate w-full bg-brand-yellow text-black font-black px-6 py-4 md:py-5 rounded-xl text-lg md:text-2xl uppercase shadow-2xl hover:bg-brand-red hover:text-white transition-all duration-300"
+                            >
+                                Giữ chỗ ngay - 986.000Đ
+                            </button>
+
+                            <!-- Trust signals -->
+                            <div class="pt-3 space-y-2 text-center text-xs md:text-sm text-gray-600">
+                                <p class="flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-green-600 text-base">verified</span>
+                                    Bảo mật thông tin tuyệt đối
+                                </p>
+                                <p class="flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-green-600 text-base">support_agent</span>
+                                    BTC sẽ gọi lại xác nhận trong 24h
+                                </p>
+                            </div>
+                        </form>
+
+                        <!-- Màn cảm ơn (ẩn ban đầu) -->
+                        <div id="thank-you-screen" class="hidden w-full bg-white rounded-3xl border-2 border-brand-yellow p-6 md:p-10 shadow-2xl text-center">
+                            <div class="bg-green-100 text-green-600 rounded-full w-20 h-20 mx-auto flex items-center justify-center mb-6">
+                                <span class="material-symbols-outlined text-5xl">check_circle</span>
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-black text-brand-red mb-4 font-display">
+                                ĐĂNG KÝ THÀNH CÔNG!
+                            </h3>
+                            <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
+                                Cảm ơn bạn đã đăng ký khóa học <strong>"Bản Đồ Xây Kênh Thương Hiệu Cá Nhân"</strong>.<br>
+                                Vui lòng chuyển khoản học phí <strong class="text-brand-red">986.000đ</strong> theo thông tin bên dưới, BTC sẽ gửi link Zoom qua Zalo trong 24h.
+                            </p>
+
+                            <!-- Thông tin chuyển khoản -->
+                            <div class="bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 md:p-6 text-left space-y-3 mb-6">
+                                <div>
+                                    <p class="text-xs md:text-sm text-gray-500 uppercase">Ngân hàng</p>
+                                    <p class="font-bold text-base md:text-lg">Vietcombank (VCB)</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs md:text-sm text-gray-500 uppercase">Số tài khoản</p>
+                                    <p class="font-bold text-base md:text-lg text-brand-red">0123456789</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs md:text-sm text-gray-500 uppercase">Chủ tài khoản</p>
+                                    <p class="font-bold text-base md:text-lg">DIEM THUY</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs md:text-sm text-gray-500 uppercase">Nội dung CK</p>
+                                    <p class="font-bold text-base md:text-lg" id="payment-note">BANDO [Họ tên - SĐT]</p>
+                                </div>
+                            </div>
+
+                            <p class="text-sm text-gray-600">
+                                Mọi thắc mắc liên hệ Zalo: <a href="https://zalo.me/0987654321" class="text-brand-red font-bold underline">0987 654 321</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-10 md:py-12 bg-brand-darker border-t border-zinc-900 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="max-w-3xl mx-auto mb-8 md:mb-10 text-zinc-500 text-[10px] md:text-sm italic leading-relaxed text-justify">
+                <p class="font-bold uppercase mb-2 text-center text-brand-red text-xs md:text-sm">Tuyên Bố Miễn Trừ Trách Nhiệm (Disclaimer)</p>
+                <p class="mb-2">Chúng tôi không tin vào các chương trình "làm giàu nhanh". Chúng tôi tin vào sự chăm chỉ, việc tạo ra giá trị thực, xây dựng một sự nghiệp chuyên nghiệp và bền vững, cũng như phục vụ người khác với tinh thần xuất sắc và nhất quán.</p>
+                <p>Thông tin và kiến thức được chia sẻ tại đây nhằm mục đích giáo dục và truyền cảm hứng. Không có cam kết hay bảo đảm nào về việc bạn sẽ đạt được kết quả cụ thể. Kết quả thực tế sẽ phụ thuộc vào nhiều yếu tố như tư duy, kỹ năng, sự kiên trì, kinh nghiệm và năng lực hành động của từng cá nhân. Kiến thức chúng tôi cung cấp chỉ là một phần trong hành trình đó.</p>
+            </div>
+
+            <div class="flex justify-center gap-6 md:gap-8 text-gray-500 text-[10px] md:text-sm uppercase tracking-widest font-medium mb-6 md:mb-8">
+                <a href="#" class="hover:text-white transition">Điều khoản</a>
+                <a href="#" class="hover:text-white transition">Bảo mật</a>
+                <a href="#" class="hover:text-white transition">Liên hệ</a>
+            </div>
+
+            <p class="text-gray-600 text-[10px] md:text-sm">© 2026 Bản Quyền Thuộc Về Hệ Thống Đào Tạo "Diễm Thúy Coach Xây Kênh Thương Hiệu Cá Nhân"</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 1. Countdown Timer Logic
+        let timeLeft = 15 * 60;
+        const countdown = () => {
+            const days = Math.floor(timeLeft / (3600 * 24));
+            const hours = Math.floor((timeLeft % (3600 * 24)) / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = timeLeft % 60;
+
+            const format = (num) => (num < 10 ? '0' + num : num);
+
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            if (daysEl) daysEl.innerText = format(days);
+            if (hoursEl) hoursEl.innerText = format(hours);
+            if (minutesEl) minutesEl.innerText = format(minutes);
+            if (secondsEl) secondsEl.innerText = format(seconds);
+
+            if (timeLeft > 0) {
+                timeLeft--;
+            } else {
+                clearInterval(timerInterval);
+            }
+        };
+        const timerInterval = setInterval(countdown, 1000);
+        countdown();
+
+        // 2. Accordion Logic for Modules
+        function toggleModule(index) {
+            const contents = document.querySelectorAll('.module-content');
+            const icons = document.querySelectorAll('.accordion-icon');
+
+            contents.forEach((content, i) => {
+                if (i === index) {
+                    const isActive = content.classList.contains('active');
+                    if (isActive) {
+                        content.classList.remove('active');
+                        icons[i].style.transform = 'rotate(0deg)';
+                    } else {
+                        content.classList.add('active');
+                        icons[i].style.transform = 'rotate(180deg)';
+                    }
+                } else {
+                    content.classList.remove('active');
+                    icons[i].style.transform = 'rotate(0deg)';
+                }
+            });
+        }
+
+        // 3. Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 4. Form Submission Handler
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                fullname: document.getElementById('fullname').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                timestamp: new Date().toISOString()
+            };
+
+            console.log('Form data:', formData);
+
+            // TODO: Gửi data về n8n webhook / Google Sheets tại đây
+            // fetch('https://your-webhook-url.com', {
+            //     method: 'POST',
+            //     headers: {'Content-Type': 'application/json'},
+            //     body: JSON.stringify(formData)
+            // });
+
+            document.getElementById('payment-note').textContent =
+                `BANDO ${formData.fullname.toUpperCase()} ${formData.phone}`;
+
+            document.getElementById('registration-form').classList.add('hidden');
+            document.getElementById('thank-you-screen').classList.remove('hidden');
+
+            document.getElementById('register-now').scrollIntoView({behavior: 'smooth'});
+        });
+    </script>
+</body>
+</html>
